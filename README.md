@@ -1,8 +1,6 @@
-<picture>
-    <source srcset="./.github/logo-dark.png" media="(prefers-color-scheme: light)">
-    <source srcset="./.github/logo-white.png" media="(prefers-color-scheme: dark)">
-    <img src="./.github/logo-dark.png" alt="logo">
-</picture>
+<p align="center">
+  <img src="./.github/logo.png" alt="dev-tools logo" width="800">
+</p>
 
 <h1 align="center">Dev-Tools (Nerd UI Fork)</h1>
 

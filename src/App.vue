@@ -39,8 +39,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #0b1117;
-  color: #e6edf3;
   overflow-x: hidden;
 }
 
@@ -48,7 +46,6 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #0b1117;
 }
 
 * {
@@ -58,7 +55,6 @@ html {
 /* Nerd Aesthetic Global Styles */
 .n-config-provider {
   min-height: 100vh;
-  background-color: #0b1117;
 }
 
 /* Custom Scrollbar - Cyberpunk style */
@@ -94,7 +90,7 @@ body::before {
   z-index: 9999;
   background-size: 100% 3px, 3px 100%;
   pointer-events: none;
-  opacity: 0.15;
+  opacity: v-bind('styleStore.isDarkTheme ? 0.15 : 0.05');
 }
 
 /* Subtle CRT Flicker */

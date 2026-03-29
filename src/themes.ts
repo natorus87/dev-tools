@@ -4,15 +4,41 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
   common: {
     fontFamily: 'Inter, system-ui, sans-serif',
     fontFamilyMono: '"Fira Code", monospace',
-    primaryColor: '#39ff14',
+    primaryColor: '#18a058', // Standard green with better contrast on white
+    primaryColorHover: '#36ad6a',
+    primaryColorPressed: '#0c7a43',
+    primaryColorSuppl: '#36ad6a1a',
+    bodyColor: '#ffffff',
+    cardColor: '#fcfcfc',
+    modalColor: '#ffffff',
+    textColorBase: '#1f2937',
+    textColor1: '#374151',
+    textColor2: '#4b5563',
+    borderColor: '#e5e7eb',
   },
   Menu: {
     itemHeight: '32px',
+    textColor: '#374151',
+    itemColorActive: '#18a0581a',
   },
-  Layout: { color: '#f8fafc' },
+  Layout: {
+    color: '#ffffff',
+    siderColor: '#f9fafb',
+    headerColor: '#f9fafb',
+    siderBorderColor: '#e5e7eb',
+  },
+  Card: {
+    color: '#ffffff',
+    borderColor: '#e5e7eb',
+  },
+  Table: {
+    tdColor: '#ffffff',
+    thColor: '#f9fafb',
+    borderColor: '#e5e7eb',
+  },
   AutoComplete: {
     peers: {
-      InternalSelectMenu: { height: '500px' },
+      InternalSelectMenu: { height: '500px', color: '#ffffff' },
     },
   },
 };
