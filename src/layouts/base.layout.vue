@@ -153,6 +153,8 @@ const tools = computed<ToolCategory[]>(() => [
   text-align: left;
   padding: 0 20px 20px;
   line-height: 1.5;
+  color: var(--n-text-color);
+  opacity: 0.6;
 
   .c-link {
     color: inherit;
@@ -177,7 +179,7 @@ const tools = computed<ToolCategory[]>(() => [
 
   .gradient {
     margin-top: -65px;
-    filter: hue-rotate(90deg) brightness(0.8);
+    filter: v-bind('styleStore.isDarkTheme ? "hue-rotate(90deg) brightness(0.8)" : "hue-rotate(90deg) brightness(1.3)"');
     opacity: 0.6;
   }
 
@@ -187,12 +189,12 @@ const tools = computed<ToolCategory[]>(() => [
     width: 100%;
     text-align: center;
     top: 24px;
-    color: #fff;
+    color: var(--n-text-color);
 
     .title {
       font-size: 28px;
       font-weight: 800;
-      text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+      text-shadow: v-bind('styleStore.isDarkTheme ? "0 0 10px rgba(0, 255, 65, 0.3)" : "none"');
     }
 
     .divider {

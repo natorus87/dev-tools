@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useThemeVars } from 'naive-ui';
 import { useStyleStore } from '@/stores/style.store';
 
+const themeVars = useThemeVars();
 const styleStore = useStyleStore();
 const { isMenuCollapsed, isSmallScreen } = toRefs(styleStore);
 const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static'));
@@ -54,9 +56,10 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 }
 
 .n-layout-sider {
-  background-color: rgba(13, 17, 23, 0.8) !important;
+  background-color: v-bind('themeVars.siderColor') !important;
   backdrop-filter: blur(12px);
-  border-right: 1px solid rgba(0, 255, 65, 0.1) !important;
+  border-right: 1px solid v-bind('themeVars.siderBorderColor') !important;
+  transition: background-color 0.3s var(--n-bezier), border-color 0.3s var(--n-bezier);
   z-index: 100;
 }
 </style>

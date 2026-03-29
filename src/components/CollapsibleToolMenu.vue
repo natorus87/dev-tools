@@ -51,7 +51,7 @@ const themeVars = useThemeVars();
         <icon-mdi-chevron-right class="text-primary!" />
       </span>
 
-      <span ml-8px text-11px font-mono uppercase tracking-[0.2em] font-700 text-white op-90>
+      <span ml-8px text-11px font-mono uppercase tracking-[0.2em] font-700 op-90>
         {{ name }}
       </span>
     </div>
@@ -97,7 +97,7 @@ const themeVars = useThemeVars();
     }
     
     ::v-deep(.n-menu-item-content-header) {
-      color: rgba(255, 255, 255, 0.85) !important;
+      color: var(--n-item-text-color);
       transition: color 0.2s ease;
     }
 
