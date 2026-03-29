@@ -1,0 +1,136 @@
+home:
+  categories:
+    newestTools: Новые инструменты
+    favoriteTools: 'Ваши любимые инструменты'
+    allTools: 'Все инструменты'
+    favoritesDndToolTip: 'Перетащите, чтобы изменить порядок'
+  subtitle: 'Удобные инструменты для разработчиков'
+  toggleMenu: 'Переключить меню'
+  home: Главная
+  uiLib: 'Библиотека UI'
+  support: 'Поддержать разработку IT-Tools'
+  buyMeACoffee: 'Купить мне кофе'
+  follow:
+    title: 'Вам нравится IT-Tools?'
+    p1: 'Поставьте нам звезду на'
+    githubRepository: 'IT-Tools GitHub репозиторий'
+    p2: 'или подпишитесь на нас в'
+    twitterXAccount: 'IT-Tools X аккаунт'
+    thankYou: 'Спасибо!'
+  nav:
+    github: 'GitHub репозиторий'
+    githubRepository: 'IT-Tools GitHub репозиторий'
+    twitterX: 'X аккаунт'
+    twitterXAccount: 'IT Tools X аккаунт'
+    about: 'О IT-Tools'
+    aboutLabel: 'О нас'
+    darkMode: 'Темная тема'
+    lightMode: 'Светлая тема'
+    mode: 'Переключить тему'
+about:
+  content: >
+    # О IT-Tools
+
+    Этот замечательный сайт, созданный с ❤ [Corentin Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about), объединяет полезные инструменты для разработчиков и людей, работающих в ИТ. Если он вам понравился, поделитесь им с друзьями и не забудьте добавить в закладки!
+
+    IT Tools — это проект с открытым исходным кодом (лицензия GPL-3.0), он бесплатен и всегда будет таким. Однако поддержка домена и хостинга требует затрат. Если вы хотите поддержать мою работу, [станьте спонсором](https://www.buymeacoffee.com/cthmsst).
+
+    ## Технологии
+
+    IT Tools построен на Vue.js (Vue 3) с использованием библиотеки компонентов Naive UI и развернут на Vercel. В некоторых инструментах используются сторонние библиотеки, полный список которых можно найти в файле [package.json](https://github.com/CorentinTh/it-tools/blob/main/package.json).
+
+    ## Нашли ошибку? Не хватает инструмента?
+
+    Если вам нужен инструмент, которого здесь нет, создайте запрос в [разделе issues](https://github.com/CorentinTh/it-tools/issues/new/choose) на GitHub.
+
+    Если вы нашли баг, пожалуйста, сообщите о нем там же.
+search:
+  label: Поиск
+tools:
+  categories:
+    favorite-tools: 'Избранное'
+    crypto: Крипто
+    converter: Конвертеры
+    web: Веб
+    images and videos: 'Изображения и видео'
+    development: Разработка
+    network: Сети
+    math: Математика
+    measurement: Измерения
+    text: Текст
+    data: Данные
+  uuid-generator:
+    title: Генератор UUID
+    description: Генерация случайных UUID (версии 1, 3, 4, 5, 6 и 7).
+  json-prettify:
+    title: JSON форматтер
+    description: Форматирование и просмотр JSON в удобном виде.
+  aspect-ratio-calculator:
+    title: Калькулятор соотношения сторон
+    description: Рассчитайте соотношение сторон и измените размеры с сохранением пропорций.
+
+  ipv6-reverse-dns-generator:
+    title: Генератор обратного DNS для IPv6
+    description: Преобразование IPv6-адреса в стандартный формат обратной DNS записи PTR (ip6.arpa).
+
+  k8s-rbac-generator:
+    title: Генератор K8s RBAC
+    description: Генерация YAML-манифестов Kubernetes для ролей и привязок ролей (RBAC).
+
+  web-to-markdown-converter:
+    title: Web в Markdown конвертер
+    description: Конвертируйте любой URL веб-сайта или необработанный HTML-код в отформатированную строку Markdown.
+
+  jasypt-encryption-decryption:
+    title: Шифрование / дешифрование Jasypt
+    description: Зашифруйте или расшифруйте строки с помощью стандартных алгоритмов Jasypt (Java Simplified Encryption), обычно используемых в Spring Boot.
+
+  bech32-toolkit:
+    title: Bech32 набор инструментов
+    description: Кодирование и декодирование данных base32 с использованием форматов контрольной суммы Bech32 и Bech32m (BIP-173 и BIP-350).
+
+  api-client:
+    title: API клиент
+    description: Тестируйте, управляйте и отлаживайте HTTP API-запросы безопасно из вашего браузера.
+
+  objgen-generator:
+    title: ObjGen генератор
+    description: Создавайте наборы данных JSON с использованием краткого синтаксиса форматирования ObjGen.
+
+  dead-pixel-tester:
+    title: Тестер битых пикселей
+    description: Проверьте свой экран в полноэкранном режиме на наличие застрявших и битых пикселей.
+
+  tmux-cheat-sheet:
+    title: Tmux шпаргалка
+    description: Краткое справочное руководство по сочетаниям клавиш и командам мультиплексора терминала Tmux.
+
+  credit-card-generator:
+    title: Генератор кредитных карт
+    description: Генерируйте действительные фиктивные номера кредитных карт (контрольная сумма Luhn) для тестирования потоков платежей.
+
+  whois-lookup:
+    title: Whois поиск
+    description: Запрашивайте исчерпывающую историю общедоступных доменов регистрации с использованием собственной интеграции RDAP.
+
+  mailto-link-generator:
+    title: Генератор ссылок Mailto
+    description: Создавайте стандартизированные теги mailto в HTML с предварительно заполненными темами и многосоставными телами.
+
+  citation-generator:
+    title: Генератор цитат
+    description: Создавайте академические справочные строки, надежно сопоставленные со стандартными форматами MLA, APA и Chicago.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

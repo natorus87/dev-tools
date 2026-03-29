@@ -9,7 +9,7 @@ function isCronValid(v: string) {
 
 const styleStore = useStyleStore();
 
-const cron = ref('40 * * * *');
+const cron = ref('0 40 * * * *');
 const cronstrueConfig = reactive({
   verbose: true,
   dayOfWeekStartIndexZero: true,

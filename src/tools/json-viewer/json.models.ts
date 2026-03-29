@@ -29,7 +29,18 @@ function formatJson({
   sortKeys?: MaybeRef<boolean>
   indentSize?: MaybeRef<number>
 }) {
-  const parsedObject = JSON5.parse(get(rawJson));
+  const json = get(rawJson);
 
-  return JSON.stringify(get(sortKeys) ? sortObjectKeys(parsedObject) : parsedObject, null, get(indentSize));
+  // Wrap large integers in strings to prevent precision loss during JSON5.parse
+  // This regex finds integers that are 16 digits or longer and wraps them.
+  const BIGINT_MARKER = '___@BIGINT@___';
+  const wrappedJson = json.replace(/([:[,]\s*)(-?\d{16,})(\s*[,\]}])/g, `$1"${BIGINT_MARKER}$2"$3`);
+
+  const parsedObject = JSON5.parse(wrappedJson);
+  const processedObject = get(sortKeys) ? sortObjectKeys(parsedObject) : parsedObject;
+
+  const stringified = JSON.stringify(processedObject, null, get(indentSize));
+
+  // Unwrap the large integers
+  return stringified.replace(new RegExp(`"${BIGINT_MARKER}(\\d+)"`, 'g'), '$1');
 }

@@ -34,18 +34,29 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #00000080;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
   cursor: pointer;
+  z-index: 99;
 }
 
 .content {
-  // background-color: #f1f5f9;
+  background-color: transparent !important;
   ::v-deep(.n-layout-scroll-container) {
     padding: 26px;
+    background-color: transparent !important;
   }
 }
 
 .n-layout {
   height: 100vh;
+  background-color: transparent !important;
+}
+
+.n-layout-sider {
+  background-color: rgba(13, 17, 23, 0.8) !important;
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(0, 255, 65, 0.1) !important;
+  z-index: 100;
 }
 </style>

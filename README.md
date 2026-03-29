@@ -4,130 +4,99 @@
     <img src="./.github/logo-dark.png" alt="logo">
 </picture>
 
+<h1 align="center">Dev-Tools (Nerd UI Fork)</h1>
+
 <p align="center">
-Useful tools for developer and people working in IT. <a href="https://it-tools.tech">Try it!</a>
+Handy tools for developers and IT professionals, now with a specialized <b>Nerd UI</b>. <br>
+<i>A fork of the excellent <a href="https://github.com/CorentinTh/it-tools">IT-Tools</a> by Corentin Thomasset.</i>
 </p>
 
-## Functionalities and roadmap
+## 🚀 About this Fork
 
-Please check the [issues](https://github.com/CorentinTh/it-tools/issues) to see if some feature listed to be implemented.
+This is a specialized fork of **IT-Tools**, rebranded as **Dev-Tools**. While maintaining all the powerful features of the original, this version focuses on:
 
-You have an idea of a tool? Submit a [feature request](https://github.com/CorentinTh/it-tools/issues/new/choose)!
+- **🎨 Nerd-friendly Hacker Aesthetic**: A complete visual overhaul for those who live in the terminal.
+- **⚡ Performance & Customizations**: Optimized workflows for power users.
+- **🛠️ Extended Toolset**: Including custom tools and integrations specifically for the development lifecycle.
 
-## Self host
+## 🎨 Design System: The Nerd UI
 
-Self host solutions for your homelab
+The project features a **Nerd-friendly Hacker Aesthetic**:
+- **Deep Dark Theme**: Optimized for long coding sessions and eye comfort.
+- **Neon Accents**: High-contrast neon green (`#39ff14`) for primary actions and highlights.
+- **Typography**: Uses **Fira Code** for technical data (with ligatures) and **Inter** for UI readability.
+- **Retro Feel**: Subtle CRT effects, scanlines, and flicker for a retro-terminal atmosphere.
 
-**From docker hub:**
+---
+
+## 🏎️ Quick Start (Self-Host)
+
+Deploy your own instance of Dev-Tools in seconds.
+
+**From GitHub Packages:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 corentinth/it-tools:latest
+docker run -d --name dev-tools --restart unless-stopped -p 8080:80 ghcr.io/natorus87/dev-tools:latest
 ```
 
-**From github packages:**
+**From Docker Hub (if applicable):**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/corentinth/it-tools:latest
+docker run -d --name dev-tools --restart unless-stopped -p 8080:80 natorus87/dev-tools:latest
 ```
 
-**Other solutions:**
+---
 
-- [Cloudron](https://www.cloudron.io/store/tech.ittools.cloudron.html)
-- [Tipi](https://www.runtipi.io/docs/apps-available)
-- [Unraid](https://unraid.net/community/apps?q=it-tools)
-
-## Contribute
+## 🛠️ Development
 
 ### Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) with the following extensions:
 
-- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
-- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)
 
-with the following settings:
-
-```json
-{
-  "editor.formatOnSave": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "i18n-ally.localesPaths": ["locales", "src/tools/*/locales"],
-  "i18n-ally.keystyle": "nested"
-}
-```
-
-### Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-### Project Setup
+### Project Commands
 
 ```sh
+# Install dependencies
 pnpm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Start development server
 pnpm dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# Build for production
 pnpm build
-```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
+# Run tests
 pnpm test
-```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
-
-### Create a new tool
-
-To create a new tool, there is a script that generate the boilerplate of the new tool, simply run:
-
-```sh
+# Create a new tool boilerplate
 pnpm run script:create:tool my-tool-name
 ```
 
-It will create a directory in `src/tools` with the correct files, and a the import in `src/tools/index.ts`. You will just need to add the imported tool in the proper category and develop the tool.
+---
 
-## Contributors
+## 🤝 Contribute
 
-Big thanks to all the people who have already contributed!
+We welcome contributions to the Nerd UI fork! Please check the [issues](https://github.com/natorus87/dev-tools/issues) for planned features.
 
-[![contributors](https://contrib.rocks/image?repo=corentinth/it-tools&refresh=1)](https://github.com/corentinth/it-tools/graphs/contributors)
+You have an idea for a tool or an aesthetic improvement? Submit a [feature request](https://github.com/natorus87/dev-tools/issues/new/choose)!
 
-## Credits
+---
 
-Coded with ❤️ by [Corentin Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=readme).
+## ❤️ Credits & Original Authors
 
-This project is continuously deployed using [vercel.com](https://vercel.com).
+This project is a fork of **IT-Tools**, originally coded with ❤️ by [Corentin Thomasset](https://corentin.tech). We are grateful for his incredible work and the community around it.
 
-Contributor graph is generated using [contrib.rocks](https://contrib.rocks/preview?repo=corentinth/it-tools).
+[![original-contributors](https://contrib.rocks/image?repo=CorentinTh/it-tools&limit=20)](https://github.com/CorentinTh/it-tools/graphs/contributors)
 
-<a href="https://www.producthunt.com/posts/it-tools?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-it&#0045;tools" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=345793&theme=light" alt="IT&#0032;Tools - Collection&#0032;of&#0032;handy&#0032;online&#0032;tools&#0032;for&#0032;devs&#0044;&#0032;with&#0032;great&#0032;UX | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-<a href="https://www.producthunt.com/posts/it-tools?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-it&#0045;tools" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=345793&theme=light&period=daily" alt="IT&#0032;Tools - Collection&#0032;of&#0032;handy&#0032;online&#0032;tools&#0032;for&#0032;devs&#0044;&#0032;with&#0032;great&#0032;UX | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+Maintainer of this fork: **natorus87** & **Antigravity (AI)**
 
-## License
+---
 
-This project is under the [GNU GPLv3](LICENSE).
+## 📄 License
+
+This project is licensed under the [GNU GPLv3](LICENSE).

@@ -18,7 +18,7 @@ import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
 const version = config.app.version;
-const commitSha = config.app.lastCommitSha.slice(0, 7);
+const commitSha = (config.app.lastCommitSha as string || '').slice(0, 7);
 
 const { tracker } = useTracker();
 const { t } = useI18n();
@@ -37,12 +37,12 @@ const tools = computed<ToolCategory[]>(() => [
     <template #sider>
       <RouterLink to="/" class="hero-wrapper">
         <HeroGradient class="gradient" />
-        <div class="text-wrapper">
-          <div class="title">
-            IT - TOOLS
+        <div class="text-wrapper font-mono">
+          <div class="title tracking-tighter">
+            <span class="text-primary">>_</span>dev-tools
           </div>
           <div class="divider" />
-          <div class="subtitle">
+          <div class="subtitle opacity-70 uppercase text-xs tracking-widest">
             {{ $t('home.subtitle') }}
           </div>
         </div>
@@ -59,41 +59,37 @@ const tools = computed<ToolCategory[]>(() => [
 
         <CollapsibleToolMenu :tools-by-category="tools" />
 
-        <div class="footer">
+        <div class="footer font-mono text-[10px] opacity-40 uppercase tracking-tighter mt-10">
           <div>
-            IT-Tools
-
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
-              v{{ version }}
+            $ dev-tools --version
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/dev-tools/tree/v${version}`">
+              {{ version }}
             </c-link>
-
-            <template v-if="commitSha && commitSha.length > 0">
-              -
-              <c-link
-                target="_blank"
-                rel="noopener"
-                type="primary"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
-              >
-                {{ commitSha }}
-              </c-link>
-            </template>
           </div>
-          <div>
-            © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://corentin.tech?utm_source=it-tools&utm_medium=footer">
-              Corentin Thomasset
+          <div v-if="commitSha && commitSha.length > 0">
+            $ git rev-parse HEAD
+            <c-link
+              target="_blank"
+              rel="noopener"
+              type="primary"
+              :href="`https://github.com/CorentinTh/dev-tools/tree/${commitSha}`"
+            >
+              {{ commitSha }}
             </c-link>
+          </div>
+          <div mt-4>
+            system: online
           </div>
         </div>
       </div>
     </template>
 
     <template #content>
-      <div flex items-center justify-center gap-2>
+      <div flex items-center justify-center gap-2 mb-6 border-b pb-4 class="border-white/5">
         <c-button
           circle
           variant="text"
+          class="hover:text-primary transition-colors"
           :aria-label="$t('home.toggleMenu')"
           @click="styleStore.isMenuCollapsed = !styleStore.isMenuCollapsed"
         >
@@ -101,7 +97,7 @@ const tools = computed<ToolCategory[]>(() => [
         </c-button>
 
         <c-tooltip :tooltip="$t('home.home')" position="bottom">
-          <c-button to="/" circle variant="text" :aria-label="$t('home.home')">
+          <c-button to="/" circle variant="text" class="hover:text-primary transition-colors" :aria-label="$t('home.home')">
             <NIcon size="25" :component="Home2" />
           </c-button>
         </c-tooltip>
@@ -112,7 +108,7 @@ const tools = computed<ToolCategory[]>(() => [
           </c-button>
         </c-tooltip>
 
-        <command-palette />
+        <command-palette class="mx-4 flex-grow max-w-[400px]" />
 
         <locale-selector v-if="!styleStore.isSmallScreen" />
 
@@ -122,11 +118,11 @@ const tools = computed<ToolCategory[]>(() => [
 
         <c-tooltip position="bottom" :tooltip="$t('home.support')">
           <c-button
-            round
-            href="https://www.buymeacoffee.com/cthmsst"
+            secondary
+            href="https:// Buymeacoffee.com/cthmsst"
             rel="noopener"
             target="_blank"
-            class="support-button"
+            class="support-button font-mono tracking-widest text-xs uppercase"
             :bordered="false"
             @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"
           >
@@ -141,39 +137,33 @@ const tools = computed<ToolCategory[]>(() => [
 </template>
 
 <style lang="less" scoped>
-// ::v-deep(.n-layout-scroll-container) {
-//     @percent: 4%;
-//     @position: 25px;
-//     @size: 50px;
-//     @color: #eeeeee25;
-//     background-image: radial-gradient(@color @percent, transparent @percent),
-//         radial-gradient(@color @percent, transparent @percent);
-//     background-position: 0 0, @position @position;
-//     background-size: @size @size;
-// }
-
 .support-button {
-  background: rgb(37, 99, 108);
-  background: linear-gradient(48deg, rgba(37, 99, 108, 1) 0%, rgba(59, 149, 111, 1) 60%, rgba(20, 160, 88, 1) 100%);
-  color: #fff !important;
-  transition: padding ease 0.2s !important;
+  background: var(--n-primary-color);
+  color: #0b0e14 !important;
+  font-weight: 800;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
 
   &:hover {
-    color: #fff;
-    padding-left: 30px;
-    padding-right: 30px;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+    transform: translateY(-1px);
   }
 }
 
 .footer {
-  text-align: center;
-  color: #838587;
-  margin-top: 20px;
-  padding: 20px 0;
+  text-align: left;
+  padding: 0 20px 20px;
+  line-height: 1.5;
+
+  .c-link {
+    color: inherit;
+    &:hover {
+      color: var(--n-primary-color);
+    }
+  }
 }
 
 .sider-content {
-  padding-top: 160px;
+  padding-top: 140px;
   padding-bottom: 200px;
 }
 
@@ -187,6 +177,8 @@ const tools = computed<ToolCategory[]>(() => [
 
   .gradient {
     margin-top: -65px;
+    filter: hue-rotate(90deg) brightness(0.8);
+    opacity: 0.6;
   }
 
   .text-wrapper {
@@ -194,24 +186,26 @@ const tools = computed<ToolCategory[]>(() => [
     left: 0;
     width: 100%;
     text-align: center;
-    top: 16px;
+    top: 24px;
     color: #fff;
 
     .title {
-      font-size: 25px;
-      font-weight: 600;
+      font-size: 28px;
+      font-weight: 800;
+      text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
     }
 
     .divider {
-      width: 50px;
+      width: 40px;
       height: 2px;
       border-radius: 4px;
-      background-color: v-bind('themeVars.primaryColor');
-      margin: 0 auto 5px;
+      background-color: var(--n-primary-color);
+      margin: 4px auto 8px;
+      box-shadow: 0 0 5px var(--n-primary-color);
     }
 
     .subtitle {
-      font-size: 16px;
+      font-size: 10px;
     }
   }
 }

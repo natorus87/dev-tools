@@ -16,5 +16,11 @@ describe('string-obfuscator model', () => {
       expect(obfuscateString('12345 67890')).toBe('1234* *****');
       expect(obfuscateString('12345 67890', { keepSpace: false })).toBe('1234*******');
     });
+
+    it('removes substrings before obfuscating', () => {
+      expect(obfuscateString('hello moresophy world', { substringsToRemove: ['moresophy'] })).toBe('hell*  *****');
+      expect(obfuscateString('hello moresophy world', { substringsToRemove: ['moresophy'], keepFirst: 100 })).toBe('hello  world');
+      expect(obfuscateString('hello GVL world', { substringsToRemove: ['gvl'], keepFirst: 100 })).toBe('hello  world');
+    });
   });
 });

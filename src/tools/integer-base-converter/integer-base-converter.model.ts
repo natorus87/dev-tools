@@ -2,7 +2,7 @@ export function convertBase({ value, fromBase, toBase }: { value: string; fromBa
   const range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
   const fromRange = range.slice(0, fromBase);
   const toRange = range.slice(0, toBase);
-  let decValue = value
+  let decValue = (fromBase <= 36 ? value.toLowerCase() : value)
     .split('')
     .reverse()
     .reduce((carry: bigint, digit: string, index: number) => {

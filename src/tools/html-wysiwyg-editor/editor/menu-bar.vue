@@ -12,6 +12,9 @@ import {
   H2,
   H3,
   H4,
+  H5,
+  H6,
+  Separator,
   Italic,
   List,
   ListNumbers,
@@ -95,6 +98,20 @@ const items: MenuItem[] = [
     isActive: () => editor.value.isActive('heading', { level: 4 }),
   },
   {
+    type: 'button',
+    icon: H5,
+    title: 'Heading 5',
+    action: () => editor.value.chain().focus().toggleHeading({ level: 5 }).run(),
+    isActive: () => editor.value.isActive('heading', { level: 5 }),
+  },
+  {
+    type: 'button',
+    icon: H6,
+    title: 'Heading 6',
+    action: () => editor.value.chain().focus().toggleHeading({ level: 6 }).run(),
+    isActive: () => editor.value.isActive('heading', { level: 6 }),
+  },
+  {
     type: 'divider',
   },
   {
@@ -134,6 +151,12 @@ const items: MenuItem[] = [
     icon: TextWrap,
     title: 'Hard break',
     action: () => editor.value.chain().focus().setHardBreak().run(),
+  },
+  {
+    type: 'button',
+    icon: Separator,
+    title: 'Horizontal rule',
+    action: () => editor.value.chain().focus().setHorizontalRule().run(),
   },
   {
     type: 'button',

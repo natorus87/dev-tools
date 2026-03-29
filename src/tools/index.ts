@@ -1,6 +1,20 @@
 import { tool as base64FileConverter } from './base64-file-converter';
 import { tool as base64StringConverter } from './base64-string-converter';
 import { tool as basicAuthGenerator } from './basic-auth-generator';
+import { tool as citationGenerator } from './citation-generator';
+import { tool as mailtoLinkGenerator } from './mailto-link-generator';
+import { tool as whoisLookup } from './whois-lookup';
+import { tool as creditCardGenerator } from './credit-card-generator';
+import { tool as tmuxCheatSheet } from './tmux-cheat-sheet';
+import { tool as deadPixelTester } from './dead-pixel-tester';
+import { tool as objgenGenerator } from './objgen-generator';
+import { tool as apiClient } from './api-client';
+import { tool as bech32Toolkit } from './bech32-toolkit';
+import { tool as jasyptEncryptionDecryption } from './jasypt-encryption-decryption';
+import { tool as webToMarkdownConverter } from './web-to-markdown-converter';
+import { tool as k8sRbacGenerator } from './k8s-rbac-generator';
+import { tool as ipv6ReverseDnsGenerator } from './ipv6-reverse-dns-generator';
+import { tool as aspectRatioCalculator } from './aspect-ratio-calculator';
 import { tool as emailNormalizer } from './email-normalizer';
 
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
@@ -91,7 +105,7 @@ import { tool as yamlViewer } from './yaml-viewer';
 export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Crypto',
-    components: [tokenGenerator, hashText, bcrypt, uuidGenerator, ulidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator, passwordStrengthAnalyser, pdfSignatureChecker],
+    components: [tokenGenerator, hashText, bcrypt, uuidGenerator, ulidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator, passwordStrengthAnalyser, pdfSignatureChecker, jasyptEncryptionDecryption, bech32Toolkit],
   },
   {
     name: 'Converter',
@@ -116,6 +130,7 @@ export const toolsByCategory: ToolCategory[] = [
       xmlToJson,
       jsonToXml,
       markdownToHtml,
+      webToMarkdownConverter,
     ],
   },
   {
@@ -137,11 +152,12 @@ export const toolsByCategory: ToolCategory[] = [
       httpStatusCodes,
       jsonDiff,
       safelinkDecoder,
+      mailtoLinkGenerator,
     ],
   },
   {
     name: 'Images and videos',
-    components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder],
+    components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder, deadPixelTester],
   },
   {
     name: 'Development',
@@ -160,11 +176,17 @@ export const toolsByCategory: ToolCategory[] = [
       emailNormalizer,
       regexTester,
       regexMemo,
+      k8sRbacGenerator,
+      apiClient,
+      objgenGenerator,
+      tmuxCheatSheet,
+      creditCardGenerator,
+      citationGenerator,
     ],
   },
   {
     name: 'Network',
-    components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator],
+    components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator, whoisLookup, ipv6ReverseDnsGenerator],
   },
   {
     name: 'Math',

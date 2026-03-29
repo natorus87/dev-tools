@@ -46,18 +46,20 @@ export const useToolStore = defineStore('tools', () => {
 
     addToolToFavorites({ tool }: { tool: MaybeRef<Tool> }) {
       const toolPath = get(tool).path;
-      if (toolPath) {
+      if (toolPath && !favoriteToolsName.value.includes(toolPath)) {
         favoriteToolsName.value.push(toolPath);
       }
     },
 
     removeToolFromFavorites({ tool }: { tool: MaybeRef<Tool> }) {
-      favoriteToolsName.value = favoriteToolsName.value.filter(name => get(tool).name !== name && get(tool).path !== name);
+      const { name, path } = get(tool);
+      favoriteToolsName.value = favoriteToolsName.value.filter(n => n !== name && n !== path);
     },
 
     isToolFavorite({ tool }: { tool: MaybeRef<Tool> }) {
-      return favoriteToolsName.value.includes(get(tool).name)
-        || favoriteToolsName.value.includes(get(tool).path);
+      const { name, path } = get(tool);
+      return favoriteToolsName.value.includes(name)
+        || favoriteToolsName.value.includes(path);
     },
 
     updateFavoriteTools(newOrder: ToolWithCategory[]) {

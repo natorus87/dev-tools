@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+## Version 2026.03.29-d505845
+
+### Features
+- **new tool**: API Client (#1732)
+- **new tool**: ObjGen Support (#1731)
+- **new tool**: Dead Pixel Tester (#1700)
+- **new tool**: Tmux Cheat Sheet (#1693)
+- **new tool**: Credit Card Number Generator (#1660)
+- **new tool**: Whois Lookup (#1656)
+- **new tool**: Mailto Link Generator (#1623)
+- **new tool**: Citation Generator (#1592)
+- **extension**: String Obfuscator now supports Substring Removal (Substring Remover extension)
+
+### Chores
+- **rebrand**: Application completely rebranded to dev-tools
+- **ui**: Implemented "Nerd-Friendly" UI redesign with neon colors and Fira Code fonts
+- **fix**: Resolved cascade of build-breaking dependency conflicts (VueUse, Tabler Icons, UUID v10)
+- **docker**: Optimized production build process and patched `objgen` shebang issues
+- **maintainer**: Added Antigravity (AI) as co-maintainer
+
 ## Version 2024.10.22-7ca5933
 
 ### Features

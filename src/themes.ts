@@ -1,12 +1,15 @@
 import type { GlobalThemeOverrides } from 'naive-ui';
 
 export const lightThemeOverrides: GlobalThemeOverrides = {
+  common: {
+    fontFamily: 'Inter, system-ui, sans-serif',
+    fontFamilyMono: '"Fira Code", monospace',
+    primaryColor: '#39ff14',
+  },
   Menu: {
     itemHeight: '32px',
   },
-
-  Layout: { color: '#f1f5f9' },
-
+  Layout: { color: '#f8fafc' },
   AutoComplete: {
     peers: {
       InternalSelectMenu: { height: '500px' },
@@ -16,39 +19,51 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
 
 export const darkThemeOverrides: GlobalThemeOverrides = {
   common: {
-    primaryColor: '#1ea54cFF',
-    primaryColorHover: '#36AD6AFF',
-    primaryColorPressed: '#0C7A43FF',
-    primaryColorSuppl: '#36AD6AFF',
+    fontFamily: 'Inter, system-ui, sans-serif',
+    fontFamilyMono: '"Fira Code", monospace',
+    primaryColor: '#39ff14',
+    primaryColorHover: '#00ff41',
+    primaryColorPressed: '#00cc33',
+    primaryColorSuppl: '#39ff141a',
+    bodyColor: '#0b0e14',
+    cardColor: '#161b22',
+    modalColor: '#161b22',
+    textColorBase: '#ffffff',
+    textColor1: '#e6edf3',
+    textColor2: '#c9d1d9',
   },
 
   Notification: {
-    color: '#333333',
+    color: '#161b22',
+    textColor: '#e6edf3',
   },
 
   AutoComplete: {
     peers: {
-      InternalSelectMenu: { height: '500px', color: '#1e1e1e' },
+      InternalSelectMenu: { height: '500px', color: '#161b22' },
     },
   },
 
   Menu: {
     itemHeight: '32px',
+    fontSize: '14px',
   },
 
   Layout: {
-    color: '#1c1c1c',
-    siderColor: '#232323',
-    siderBorderColor: 'transparent',
+    color: '#0b0e14',
+    siderColor: '#0d1117',
+    siderBorderColor: '#30363d',
+    headerColor: '#0d1117',
   },
 
   Card: {
-    color: '#232323',
-    borderColor: '#282828',
+    color: '#161b22',
+    borderColor: '#30363d',
   },
 
   Table: {
-    tdColor: '#232323',
-    thColor: '#353535',
+    tdColor: '#161b22',
+    thColor: '#21262d',
+    borderColor: '#30363d',
   },
 };

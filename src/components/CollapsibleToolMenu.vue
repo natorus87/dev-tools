@@ -46,12 +46,12 @@ const themeVars = useThemeVars();
 
 <template>
   <div v-for="{ name, tools, isCollapsed } of menuOptions" :key="name">
-    <div ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ name })">
-      <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-50 transition-transform>
-        <icon-mdi-chevron-right />
+    <div ml-6px mt-12px flex cursor-pointer items-center op-60 hover:op-100 transition-opacity @click="toggleCategoryCollapse({ name })">
+      <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-80 transition-transform>
+        <icon-mdi-chevron-right class="text-primary!" />
       </span>
 
-      <span ml-8px text-13px>
+      <span ml-8px text-11px font-mono uppercase tracking-[0.2em] font-700 text-white op-90>
         {{ name }}
       </span>
     </div>
@@ -61,7 +61,7 @@ const themeVars = useThemeVars();
         <div class="toggle-bar" @click="toggleCategoryCollapse({ name })" />
 
         <n-menu
-          class="menu"
+          class="menu font-mono"
           :value="route.path"
           :collapsed-width="64"
           :collapsed-icon-size="22"
@@ -85,6 +85,24 @@ const themeVars = useThemeVars();
     ::v-deep(.n-menu-item-content::before) {
       left: 0;
       right: 13px;
+      border-radius: 4px;
+    }
+
+    ::v-deep(.n-menu-item-content.n-menu-item-content--selected) {
+      .n-menu-item-content-header {
+        color: var(--n-primary-color) !important;
+        text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+        font-weight: 700;
+      }
+    }
+    
+    ::v-deep(.n-menu-item-content-header) {
+      color: rgba(255, 255, 255, 0.85) !important;
+      transition: color 0.2s ease;
+    }
+
+    ::v-deep(.n-menu-item-content:hover .n-menu-item-content-header) {
+      color: var(--n-primary-color) !important;
     }
   }
 
@@ -96,18 +114,17 @@ const themeVars = useThemeVars();
     cursor: pointer;
 
     &::before {
-      width: 2px;
+      width: 1px;
       height: 100%;
       content: ' ';
-      background-color: v-bind('themeVars.textColor3');
-      border-radius: 2px;
+      background: linear-gradient(to bottom, var(--n-primary-color), transparent);
       position: absolute;
       top: 0;
       left: 14px;
     }
 
     &:hover {
-      opacity: 0.5;
+      opacity: 0.4;
     }
   }
 }

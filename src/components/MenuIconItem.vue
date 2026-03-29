@@ -22,14 +22,13 @@ const theme = useThemeVars();
   .badge {
     position: absolute;
     background-color: v-bind('theme.primaryColor');
-    border-radius: 10px;
-    line-height: 1;
-    top: 3px;
-    left: -6px;
-    font-size: 10px;
-
+    border-radius: 50%;
+    top: 2px;
+    left: -4px;
     height: 6px;
     width: 6px;
+    box-shadow: 0 0 6px v-bind('theme.primaryColor');
+    z-index: 10;
   }
 }
 </style>
