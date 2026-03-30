@@ -18,9 +18,9 @@ describe('string-obfuscator model', () => {
     });
 
     it('removes substrings before obfuscating', () => {
-      expect(obfuscateString('hello moresophy world', { substringsToRemove: ['moresophy'] })).toBe('hell*  *****');
-      expect(obfuscateString('hello moresophy world', { substringsToRemove: ['moresophy'], keepFirst: 100 })).toBe('hello  world');
-      expect(obfuscateString('hello GVL world', { substringsToRemove: ['gvl'], keepFirst: 100 })).toBe('hello  world');
+      expect(obfuscateString('hello substring world', { substringsToRemove: ['substring'] })).toBe('hell*  *****');
+      expect(obfuscateString('hello substring world', { substringsToRemove: ['substring'], keepFirst: 100 })).toBe('hello  world');
+      expect(obfuscateString('hello removed world', { substringsToRemove: ['removed'], keepFirst: 100 })).toBe('hello  world');
     });
   });
 });

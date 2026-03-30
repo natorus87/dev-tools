@@ -2,11 +2,11 @@
 import { useObfuscateString } from './string-obfuscator.model';
 import { useCopy } from '@/composable/copy';
 
-const str = ref('Lorem ipsum moresophy dolor sit amet gvl');
+const str = ref('Lorem ipsum dolor sit amet');
 const keepFirst = ref(4);
 const keepLast = ref(4);
 const keepSpace = ref(true);
-const substringsToRemove = ref(['moresophy', 'gvl']);
+const substringsToRemove = ref([]);
 
 const obfuscatedString = useObfuscateString(str, { keepFirst, keepLast, keepSpace, substringsToRemove });
 const { copy } = useCopy({ source: obfuscatedString });
