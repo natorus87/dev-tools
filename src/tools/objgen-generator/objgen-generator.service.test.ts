@@ -3,7 +3,7 @@ import { compileObjGen } from './objgen-generator.service';
 
 describe('objgen-generator', () => {
   it('should compile valid objgen syntax to json', () => {
-    const input = `Person\n  Name = John Doe\n  Age[int] = 30`;
+    const input = `Person\n  Name = John Doe\n  Age n = 30`;
     const result = compileObjGen(input);
     expect(result.error).toBeUndefined();
     expect(result.json).toContain('"Name": "John Doe"');
