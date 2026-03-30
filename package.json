@@ -1,7 +1,7 @@
 {
   "name": "dev-tools",
   "type": "module",
-  "version": "2026.03.30-6e39d13",
+  "version": "2026.03.30-a74cae4",
   "packageManager": "pnpm@9.11.0",
   "description": "Collection of handy online tools for developers, with great UX. Forked from IT-Tools and enhanced with a Nerd UI.",
   "author": "natorus87 (https://github.com/natorus87)",
