@@ -1,7 +1,7 @@
 {
   "name": "dev-tools",
   "type": "module",
-  "version": "2026.03.29-66213b5",
+  "version": "2026.03.30-6e39d13",
   "packageManager": "pnpm@9.11.0",
   "description": "Collection of handy online tools for developers, with great UX. Forked from IT-Tools and enhanced with a Nerd UI.",
   "author": "natorus87 (https://github.com/natorus87)",
@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && NODE_OPTIONS=--max_old_space_size=4096 vite build",
+    "build": "NODE_OPTIONS=--max_old_space_size=4096 vite build",
     "preview": "vite preview --port 5050",
     "test": "npm run test:unit",
     "test:unit": "vitest --environment jsdom",
@@ -143,7 +143,7 @@
     "jsdom": "^22.0.0",
     "less": "^4.1.3",
     "prettier": "^3.0.0",
-    "typescript": "~5.2.0",
+    "typescript": "^5.4.0",
     "unocss": "^0.65.1",
     "unocss-preset-scrollbar": "^0.2.1",
     "unplugin-icons": "^0.17.0",
